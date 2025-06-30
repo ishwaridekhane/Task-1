@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  color: #2d3436;
+}
+
+header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  color: #6c5ce7;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #2d3436;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #6c5ce7;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  color: #2d3436;
+  animation: fadeIn 1s ease;
+}
+
+.section {
+  padding: 60px 40px;
+  animation: slideUp 1s ease-in-out;
+}
+
+.section h3, .section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #6c5ce7;
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-card {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: #2d3436;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+  background: #dfe6e9;
+  width: 90%;
+  margin: auto;
+  height: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 30px;
+  animation: fill 2s ease;
+}
+
+.video-box {
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fill {
+  from { width: 0; }
+  to { width: 65%; }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #dfe6e9;
+  color: #636e72;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Fade in sections on scroll */
+.hide {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
